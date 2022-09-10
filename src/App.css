@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+.cardFront,
+.cardBack {
+	max-width: 28rem;
+	height: 10.5rem;
+	border-radius: 10px;
+	background-size: cover;
+	color: var(--White);
+	position: relative;
+	padding: 32px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cardFront {
+	background-image: url("assets/bg-card-front.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	margin: 0 auto 32px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.cardFront div {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	word-spacing: 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.cardFront>span {
+	font-size: clamp(22px, 2.5vw, 27px);
+	letter-spacing: 4px;
+	margin-bottom: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.cardFront div span {
+	font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cardFront div span:first-child {
+	text-transform: uppercase;
+}
+
+
+.cardBack {
+	background-image: url("assets/bg-card-back.png");
+	background-size: contain;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	margin: 0 2rem 0 auto;
+}
+
+.cardBack span {
+	position: absolute;
+	right: 60px;
+	top: 100px;
+	font-size: 24px;
+}
+
+.cardFront::after {
+	content: url("assets/card-logo.svg");
+	position: absolute;
+	top: 27px;
+	left: 27px;
+}
+
+
+@media screen and (max-width: 1400px) {
+
+	.cardFront,
+	.cardBack {
+		transform: scale(.85);
+	}
+
+}
+
+@media screen and (max-width: 585px) {
+
+	.cardFront,
+	.cardBack {
+		transform: scale(.8) !important;
+	}
+
+	.cardFront {
+		top: 8rem !important;
+		left: 0 !important;
+	}
+
+	.cardBack {
+		right: 0 !important;
+	}
 }
