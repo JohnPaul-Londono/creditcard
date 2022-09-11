@@ -1,0 +1,96 @@
+.cardDecoration{
+    margin-right: 50px;
+}
+
+.cardFront,
+.cardBack {
+    max-width: 28rem;
+    height: 10.5rem;
+    border-radius: 10px;
+    background-size: cover;
+    color: var(--White);
+    position: relative;
+    padding: 32px;
+}
+
+.cardFront {
+    background-image: url("../assets/bg-card-front.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 auto 30px auto;
+    left: -200px;
+}
+
+.cardFront div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    word-spacing: 6px;
+}
+
+.cardFront>span {
+    font-size: clamp(22px, 2.5vw, 27px);
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.cardFront div span {
+    font-size: 16px;
+}
+
+.cardFront div span:first-child {
+    text-transform: uppercase;
+}
+
+
+.cardBack {
+    background-image: url("../assets/bg-card-back.png");
+    background-size: contain;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 4 2rem 0 auto;
+}
+
+.cardBack span {
+    position: absolute;
+    right: 60px;
+    top: 100px;
+    font-size: 24px;
+}
+
+.cardFront::after {
+    content: url("../assets/card-logo.svg");
+    position: absolute;
+    top: 27px;
+    left: 27px;
+}
+
+
+@media screen and (max-width: 1400px) {
+
+    .cardFront,
+    .cardBack {
+        transform: scale(.85);
+    }
+
+}
+
+@media screen and (max-width: 585px) {
+
+    .cardFront,
+    .cardBack {
+        transform: scale(.8) !important;
+    }
+
+    .cardFront {
+        top: 8rem !important;
+        left: 0 !important;
+    }
+
+    .cardBack {
+        right: 0 !important;
+    }
+}

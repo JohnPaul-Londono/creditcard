@@ -1,0 +1,77 @@
+
+.cardForm {
+	display: flex;
+	flex-direction: column;
+	max-width: 24rem;
+	margin: auto;
+	padding: 1rem;
+}
+.cardForm label {
+	margin-bottom: 16px;
+	gap: 14px;
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: column;
+	color: var(--Verdarviolet);
+	font-size: 15px;
+}
+.cardForm input {
+    border-radius: 6px;
+    height: 40px;
+    border: 1px solid rgb(178, 178, 178);
+    padding-left: 15px;
+	margin-bottom: 16px;
+}
+
+.labelMY {
+	width: 50%;
+    display: flex;
+}
+.mmyy{
+    display: flex;
+    justify-content: space-between;
+}
+.mmyy-cvc{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    position: relative;
+    gap:10px
+}
+
+.mm, 
+.yy{
+    width: 37%;
+}
+
+.confirm{
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    padding: 20px 0
+}
+
+
+@media screen and (max-width: 585px) {
+	.App::before {
+		height: 20rem !important;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.cardForm {
+		padding: 2rem;
+	}
+
+	.App::before {
+		content: "";
+		height: 22rem;
+	}
+}
+
+@media screen and (min-width: 1350px) {
+	.cardForm {
+		margin-left: 3.5rem;
+		padding: 0;
+	}
+}

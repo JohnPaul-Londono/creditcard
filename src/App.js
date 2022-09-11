@@ -1,21 +1,19 @@
-
+import React,{useState} from 'react'
+import Form from './components/Form';
+import Card from './components/Card';
+import Thanks from './components/Thanks';
 import './App.css';
 
+
 function App() {
+
+  const [cardForm, setCardForm] = useState({});
+  const [complete, setComplete] = useState(false);
+
   return (
     <div className="App">
-      <div className="cardDecoration">
-            <div className="cardFront">
-              <span>"0000 0000 0000 0000"</span>
-              <div>
-                <span>"Jane Appleseed"</span>
-                <span>"00" / "00"</span>
-              </div>
-            </div>
-            <div className='cardBack'>
-                <span>"000"</span>
-            </div>
-      </div>
+      <Card cardForm={cardForm}/>
+      { complete ? <Thanks setComplete={setComplete}/> : <Form setCardForm={setCardForm} setComplete={setComplete}/>}
     </div>
   );
 }
