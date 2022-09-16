@@ -9,14 +9,14 @@ const Card = ({cardForm}) => {
         <div>
             <div className="cardDecoration">
                 <div className="cardFront">
-                    <span>"0000 0000 0000 0000"</span>
+                    <span>{cardForm.card_number ? cardForm.card_number: '0000 0000 0000 0000'}</span>
                     <div>
                         <span>{cardForm.name ? cardForm.name: 'Johnny Appleseed'}</span>
-                        <span>"00"/"00"</span>
+                        <span>{cardForm.month ? cardForm.month: '00'}/{cardForm.year ? cardForm.year: '00'}</span>
                     </div>
                 </div>
                 <div className='cardBack'>
-                    <span>""000"</span>
+                    <span>{cardForm.cvc ? cardForm.cvc: '000'}</span>
                 </div>
             </div>
         </div>
